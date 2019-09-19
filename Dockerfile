@@ -1,5 +1,5 @@
 FROM arm32v7/debian:stable
-COPY qemu-arm-static /usr/bin
+#COPY qemu-arm-static /usr/bin
 
 RUN apt-get update -qq && apt-get install certbot curl unzip -qq
 RUN curl -o vault.zip https://releases.hashicorp.com/vault/1.2.3/vault_1.2.3_linux_arm.zip && unzip vault.zip && cp vault /usr/local/bin/vault
