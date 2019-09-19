@@ -24,8 +24,8 @@ job "certbot" {
       }
       driver = "docker"
       config {
-        image = "ncorrare/certbot-he-vault:release-0.0.1"
-        args = ${NOMAD_META_domainargs}
+        image = "ncorrare/certbot-he-vault:release-0.0.2"
+        args = ["${NOMAD_META_domainargs}"]
       }
       resources {
         cpu = 100 # Mhz

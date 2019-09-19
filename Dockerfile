@@ -8,4 +8,5 @@ RUN curl -o envconsul.zip https://releases.hashicorp.com/envconsul/0.9.0/envcons
 COPY certbot-vault-hook /usr/bin/certbot-vault-hook.sh
 RUN chmod +x /usr/bin/certbot-vault-hook.sh
 COPY docker-entrypoint.sh /usr/bin/docker-entrypoint.sh
+RUN chmod +x /usr/bin/docker-entrypoint.sh
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
