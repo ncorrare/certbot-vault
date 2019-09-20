@@ -4,7 +4,7 @@ job "certbot" {
   datacenters = ["dc1"]
   parameterized {
     payload       = "forbidden"
-    meta_required = ["domainargs"]
+    meta_required = ["domain", "email"]
   }
 
   group "batch" {
@@ -24,8 +24,8 @@ job "certbot" {
       }
       driver = "docker"
       config {
-        image = "ncorrare/certbot-he-vault:release-0.0.6"
-        args = ["${NOMAD_META_domainargs}"]
+        image = "ncorrare/certbot-he-vault:release-0.0.9"
+        args = ["-d ${NOMAD_META_domain}", "-m ${NOMAD_META_email}"]
       }
       resources {
         cpu = 100 # Mhz
