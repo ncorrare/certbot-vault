@@ -24,7 +24,7 @@ job "certbot" {
       }
       driver = "docker"
       config {
-        image = "ncorrare/certbot-he-vault:release-0.0.9"
+        image = "ncorrare/certbot-he-vault:release-0.0.11"
         args = ["-d ${NOMAD_META_domain}", "-m ${NOMAD_META_email}"]
       }
       resources {
