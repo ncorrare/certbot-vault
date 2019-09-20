@@ -1,4 +1,4 @@
-FROM arm32v7/debian:stable-20190910
+FROM arm32v7/ubuntu:latest
 COPY qemu-arm-static /usr/bin
 
 RUN apt-get update -qq && apt-get dist-upgrade -qq && apt-get install certbot curl unzip ca-certificates -qq
